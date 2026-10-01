@@ -1,0 +1,77 @@
+/*
+ * void16-redux-mod default keymap
+ *
+ * Physical grid (viewed from typing position, USB at the top):
+ *
+ *      enc_L | [ 1] [ 2] [ 3] [ 4] ... (rows below are the 4x4) ... | enc_R
+ *            | ( R1 ) ( R2 ) ( R3 ) ( R4 )
+ *            |  7 8 9  -        <- layer 0 numpad, shown in README
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/kscan_mock.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    behaviors {
+        /delete-property/ dev_status;
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Num";
+            // ┌─────┬─────┬─────┬─────┐
+            // │  7  │  8  │  9  │  /  │
+            // ├─────┼─────┼─────┼─────┤
+            // │  4  │  5  │  6  │  *  │
+            // ├─────┼─────┼─────┼─────┤
+            // │  1  │  2  │  3  │  -  │
+            // ├─────┼─────┼─────┼─────┤
+            // │  0  │  .  │ ENT │ FN  │
+            // └─────┴─────┴─────┴─────┘
+            bindings = <
+                &kp N7   &kp N8   &kp N9   &kp KP_DIVIDE
+                &kp N4   &kp N5   &kp N6   &kp KP_MULTIPLY
+                &kp N1   &kp N2   &kp N3   &kp KP_MINUS
+                &kp N0   &kp KP_DOT &kp KP_ENTER  &mo 1
+            >;
+
+            // enc_L: volume · enc_R: media prev/next
+            sensor-bindings = <
+                &inc_dec_kp C_VOL_UP  C_VOL_DN
+                &inc_dec_kp C_NEXT      C_PREV
+            >;
+        };
+
+        fn_layer {
+            display-name = "FN";
+            // ┌─────┬─────┬─────┬─────┐
+            // │ F13 │ F14 │ F15 │ F16 │
+            // ├─────┼─────┼─────┼─────┤
+            // │ F9  │ F10 │ F11 │ F12 │
+            // ├─────┼─────┼─────┼─────┤
+            // │ F5  │ F6  │ F7  │ F8  │
+            // ├─────┼─────┼─────┼─────┤
+            // │ F1  │ F2  │ F3  │ F4  │
+            // └─────┴─────┴─────┴─────┘
+            bindings = <
+                &kp F13  &kp F14  &kp F15  &kp F16
+                &kp F9   &kp F10  &kp F11  &kp F12
+                &kp F5   &kp F6   &kp F7   &kp F8
+                &kp F1   &kp F2   &kp F3   &kp F4
+            >;
+
+            // enc_L: page scroll · enc_R: home/end
+            sensor-bindings = <
+                &inc_dec_kp PG_UP  PG_DN
+                &inc_dec_kp HOME   END
+            >;
+        };
+    };
+};
