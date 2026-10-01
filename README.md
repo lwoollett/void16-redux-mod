@@ -72,6 +72,27 @@ base, and a nice!nano v2 running ZMK.
 | ![hex](docs/images/voronoi_hex.png) | |
 | *v12 — the hex-voronoi era (superseded)* | |
 
+
+---
+
+## Variants
+
+**Voronoi base** — the same v23 everything (2.5mm plate, 7 posts, centred
+module, MCU relief, reset pinhole), with the TO web swapped for a hex-voronoi
+lattice (jittered triangular seeds, 2.5mm web, per-cell tilt). For when you're
+feeling nostalgic.
+
+| | |
+|---|---|
+| ![vbottom](docs/images/voronoi_variant_bottom.png) | ![viso](docs/images/voronoi_variant_iso.png) |
+| *Voronoi variant underside* | *Voronoi variant assembly* |
+
+Files: `cad/bottom-plate-voronoi.stl`, `cad/void16-redux-mod-voronoi.step`,
+`cad/void16-redux-mod-voronoi.f3d`, rebuild script
+`cad/v24_voronoi_rebuild.py`. Bottom is ~38.9 cm³ (vs 44.4 TO — the hex web
+is sparser). Top plate, coupon and firmware are identical — only the bottom
+STL changes when printing this variant.
+
 ---
 
 ## Bill of materials
