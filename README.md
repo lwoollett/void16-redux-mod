@@ -56,6 +56,22 @@ base, and a nice!nano v2 running ZMK.
 | v22 | switch slot −0.1mm; reset pinhole added |
 | v23 | MCU relief (post corner → z 9.5), top plate frozen |
 
+
+---
+
+## Gallery
+
+| | |
+|---|---|
+| ![iso](docs/images/void16_v23_iso.png) | ![mcu](docs/images/void16_v23_mcu.png) |
+| *v23 assembly — TO base, recessed plate, centred module* | *MCU zone — relief cut, pedestal + battery bay* |
+| ![bottom](docs/images/bottom.png) | ![sweepy](docs/images/sweepy_underside.png) |
+| *Underside — SIMP-optimised web* | *Sweepy finish: splines, 4° taper, top-step* |
+| ![right](docs/images/void16_v22_right.png) | ![left](docs/images/void16_v22_left.png) |
+| *Right wall — reset pinhole (y75)* | *Left wall — power-switch slot* |
+| ![hex](docs/images/voronoi_hex.png) | |
+| *v12 — the hex-voronoi era (superseded)* | |
+
 ---
 
 ## Bill of materials
